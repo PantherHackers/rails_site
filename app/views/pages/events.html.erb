@@ -1,13 +1,32 @@
-<% for event in @events %>
-  <div>
-    <%= content_tag :p, event.name %>
-    <%= content_tag :p, event.start %>
-    <%= content_tag :p, event.start.strftime('%b %-d, %Y @ %l:%M %P') %>
-    <%= content_tag :p, event.end %>
-    <%= content_tag :p, event.location %>
-    <%= content_tag :p, event.description %>
-    <%= content_tag :p, event.link %>
-    <%= image_tag(event.thumbnail.to_s, :alt => 'image') %>
-    <div> end</div>
-  </div>
-<% end %>
+<div class="container event-cards-container" style="">
+    <% for event in @events %>
+        <div class="card text-center event-card mb-4 mr-3" style="justify-content: flex-start">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-block">
+            <h4 class="card-title"> <%=event.name%> </h4>
+            
+            <% if event.start.day != event.end.day  %>
+              <p class="card-text"> 
+                  <%= event.start.strftime('%b %-d') %> - <%= event.end.strftime('%b %-d')%> 
+              </p>
+            <% elsif event.start.day == event.end.day and event.start.hour != event.end.hour%>
+              <p class="card-text"> 
+                  <%= event.start.strftime('%b %-d @ %l:%M %P')%>
+              </p>
+            <% else %>
+              <p class="card-text"> 
+                  <%= event.start.strftime('%b %-d @ %l:%M %P')%>
+              </p>
+            <% end%>
+            <p class="card-text"><%= truncate(event.description, :length => 65).capitalize %></p>
+          
+          </div>
+          <div class="card-footer ">
+              <a href="#" class="btn btn-primary event-card-button">Details</a>
+          </div>
+        </div>
+
+         
+
+    <% end %>
+</div>
