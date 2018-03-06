@@ -3,8 +3,8 @@
     <%= image_tag('logo_oneline_white.png', class: 'logo-small') %>
     <p>Copyright &copy; <%= Date.today.year %> PantherHackers @ GSU</p>
     <p>
-      <% social_menu_items.each do |item| %>
-        <%= link_to item[:url], class: 'footer-social-icon' do %>
+      <% social_menu_items.each_with_index do |item, index| %>
+        <%= link_to item[:url], class: index != 0 ? 'footer-social-icon' : '' do %>
           <%= content_tag(:i, '', class: "fa #{item[:icon]}") %>
         <% end %>
       <% end %>
