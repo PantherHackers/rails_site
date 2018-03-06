@@ -57,7 +57,7 @@
 }
 .mobile-hamburger-area .btn{
 	border:0;
-	font-size:1.2em;
+	font-size:1em;
 }
 
 .mobile-stack{
@@ -72,12 +72,28 @@
 *******/
 
 @media(max-width: 502px){
+	.top-page-header {
+		// display: flex;
+	}
 	.top-page-header .logo-area{
+		margin: auto;
 		padding:5px 0;
 	}
 
 	.top-page-header .logo-area .logo{
 		max-width: 225px;
+	}
+
+	.top-page-header .mobile-hamburger-area {
+		margin-left: 75vw;
+		position: absolute;
+	}
+
+	.top-page-header .header-flex-container {
+	}
+
+	.fa-bars {
+		color: black;
 	}
 }
 
@@ -120,6 +136,8 @@
 		padding-right: 10%;
 
 	}
+
+	
 }
 
 

@@ -6,49 +6,36 @@
       color: white;
     }
   </style>
+  
   <div style="position: absolute; top: 0px; left: 0px; height: 100%">
-    <div class="tile col-lg-6 col-ms-6 col-sm-12 col-xs-12" id="tile-top-left">
-        <iframe style="width: 100%; display: block; height: 100%;" src="https://www.youtube.com/embed/iV1CDKhDCfY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+  
+<ol class="carousel-indicators">
+  <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+  <li data-target="#main-carousel" data-slide-to="1"></li>
+  <li data-target="#main-carousel" data-slide-to="2"></li>
+</ol>
 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag 'http://via.placeholder.com/1920x740', :class => "d-clock w-100"%>
     </div>
-    <div class="tile col-lg-6 col-ms-6 col-sm-12 col-xs-12" id="tile-top-right">
-      <div class="tile-wrapper">
-        <h2><strong>Simple Solutions <br /> to Complex Problems</strong></h2>
-        <%= link_to  about_path, style: "background-color: rgb(92,143,118); border-radius: 3px;", class: "btn btn-lg" do %>
-          <strong>About Us</strong>
-        <% end %>
-      </div>
+    <div class="carousel-item">
+      <%= image_tag 'http://via.placeholder.com/1920x740', :class => "d-clock w-100"%>
     </div>
-    <div class="tile col-lg-6 col-ms-6 col-sm-12 col-xs-12" id="tile-bottom-left">
-      <div class="tile-wrapper">
-        <%= form_for(@member, html: { class: 'subscribe-form' }) do |f| %>
-          <h2><strong>Stay in the know!</strong></h2>
-          <h3 style="margin-top: 0px;"><strong>Sign up for our newsletter.</strong></h3>
-          <div class="subscribe-fields">
-            <%= f.text_field :first_name, placeholder: 'Steve', class: 'name-field' %>
-            <hr>
-            <%= f.text_field :last_name, placeholder: 'Jobs', class: 'name-field' %>
-            <hr>
-            <%= f.email_field :email, placeholder: 'sjobs2@student.gsu.edu', class: 'email-field' %>
-            <%= f.submit 'Subscribe'.upcase, class: 'submit-button' %>
-          </div>
-          <%= content_tag :span, class: "message #{notice ? 'success' : 'error'}" do %>
-            <%= notice || error %>
-          <% end %> <!-- END OF CONTENT -->
-        <% end %> <!-- END OF FORM -->
-      </div>
+    <div class="carousel-item">
+      <%= image_tag 'http://via.placeholder.com/1920x740', :class => "d-clock w-100"%>
     </div>
-    <div class="tile col-lg-6 col-ms-6 col-sm-12 col-xs-12" id="tile-bottom-right">
-      <div class="tile-wrapper">
-        <%= image_tag('slack_logo.png', id: 'slack-logo-tile') %>
-        <h2><strong>Join our conversations!</strong></h2>
-        <p>
-          <strong>Engage with our vibrant community of over 400 members, and accelerate your leaning through our Interest Groups.</strong>
-        </p>
-        <%= link_to navigate_slack_pages_path, style: 'background-color: rgb(234,84,131); border-radius: 3px;', class: 'btn btn-lg' do %>
-          <strong>Join Slack!</strong>
-        <% end %>
-      </div>
-    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#main-carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#main-carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
   </div>
 </div>

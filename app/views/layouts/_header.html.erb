@@ -82,46 +82,36 @@
 
 <%= content_tag :header, class: "top-page-header" do %>
   <div class="overlay-group mobile-top-nav-area">
-  <div class="overlay-top"></div>
-  <div class="overlay-bottom mobile-top-nav">
-    <p class="close-button"><i class="fa fa-times"></i></p>
+    <div class="overlay-top"></div>
+    <div class="overlay-bottom mobile-top-nav">
+      <p class="close-button"><i class="fa fa-times"></i></p>
 
-    <% nav_menu_items.each do |item| %>
-      <p><%= link_to item[:title], item[:url] %><p>
-    <% end %>
-
-    <p class="text-small text-center">Stay in touch</p>
-    <p class="social-media">
-      <% social_menu_items.each do |item| %>
-        <%= link_to item[:url] do %>
-          <%= content_tag(:i, '', class: "fa #{item[:icon]}") %>
-        <% end %>
+      <% nav_menu_items.each do |item| %>
+        <p><%= link_to item[:title], item[:url] %><p>
       <% end %>
-    </p>
-  </div>
-</div>
-  <div class="<%= "overlay-bottom" if home? %> wrapper clearfix">
-    <%= link_to image_tag("logo_oneline.png", class: 'logo'), home_url, class: 'logo-area' %>
-    <div class="navigation-area">
-      <ul class="navigation">
-        <% nav_menu_items.each do |item| %>
-          <li><%= link_to item[:title], item[:url] %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="social-media-area">
-      <ul>
+
+      <p class="text-small text-center">Stay in touch</p>
+      <p class="social-media">
         <% social_menu_items.each do |item| %>
-          <li>
-            <%= link_to item[:url] do %>
-              <%= content_tag(:i, '', class: "fa #{item[:icon]}") %>
-            <% end %>
-          </li>
+          <%= link_to item[:url] do %>
+            <%= content_tag(:i, '', class: "fa #{item[:icon]}") %>
+          <% end %>
         <% end %>
-      </ul>
-    </div>
-    <div class="mobile-hamburger-area">
-      <button class="btn"><i class="fa fa-bars"></i></button>
+        </p>
     </div>
   </div>
+    <div class="<%= "overlay-bottom" if home? %> wrapper clearfix header-flex-container">
+      <%= link_to image_tag("logo_oneline.png", class: 'logo'), home_url, class: 'logo-area' %>
+      <div class="navigation-area">
+        <ul class="navigation">
+          <% nav_menu_items.each do |item| %>
+            <li><%= link_to item[:title], item[:url] %></li>
+          <% end %>
+        </ul>
+      </div>
+    
+      <div class="mobile-hamburger-area">
+        <button class="btn"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
 <% end %> <!-- END OF HEADER -->
