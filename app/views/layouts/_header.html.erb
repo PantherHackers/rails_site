@@ -90,14 +90,7 @@
         <p><%= link_to item[:title], item[:url] %><p>
       <% end %>
 
-      <p class="text-small text-center">Stay in touch</p>
-      <p class="social-media">
-        <% social_menu_items.each do |item| %>
-          <%= link_to item[:url] do %>
-            <%= content_tag(:i, '', class: "fa #{item[:icon]}") %>
-          <% end %>
-        <% end %>
-        </p>
+      
     </div>
   </div>
     <div class="<%= "overlay-bottom" if home? %> wrapper clearfix header-flex-container">
